@@ -5,7 +5,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/ingest',  function(request, response) {
-  result = '';
+  let status = 200, result = '';
   try {
     let argsValid = false,
         status = 200,
@@ -17,7 +17,7 @@ router.get('/ingest',  function(request, response) {
     if (argsValid !== true) {
       status = 403;
     } else {
-      let dbManager = require('dbManager');
+      let dbManager = require('../dbManager');
       status = dbManager.insertTimeStamp(timeStamp, cpuLoad, concurrency) ? 200 : 500
     }
   } catch (e) {

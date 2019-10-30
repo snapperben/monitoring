@@ -1,6 +1,6 @@
 CREATE TABLE `monitoring`.`time_series` (
-  `id` INT NOT NULL,
-  `time_stamp` TIMESTAMP NOT NULL,
-  `cpuload` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `time_stamp` INT NOT NULL,
+  `cpuload` TINYINT NOT NULL,
   `concurrency` INT NOT NULL,
-  `source` VARCHAR(45) NOT NULL);
+  PRIMARY KEY (`id`));
